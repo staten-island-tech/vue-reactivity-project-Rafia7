@@ -5,8 +5,9 @@
         <h1 class="name"> Rafi's Grocery Store</h1>
     </div>
 
-    <div class="items-image"> 
-      <img src="image">
+    <div class="items-image" v-for="store in store"> 
+      <img :src="image">
+  
 
     </div>
     <div class="items">{{item}}</div>
@@ -17,8 +18,8 @@
  
 </template>
 <script>
-/*export default {
-  el:"App", 
+export default {
+  name:"App", 
   data(){
     return{
       store: [{
@@ -34,9 +35,9 @@
       ]
     }
   }
-}*/
+}
 
-import AppVue from "../../my-project/src/App.vue";
+/*import AppVue from "../../my-project/src/App.vue";
 
 const app = new AppVue({
   el: "app",
@@ -44,7 +45,7 @@ const app = new AppVue({
     item: "toast",
 
   }
-})
+})*/
 
 </script>
 
