@@ -5,8 +5,8 @@
         <h1 class="name"> Rafi's Grocery Store</h1>
     </div>
 
-    <div class="items-image" v-for="store in store"> 
-      <img :src="image">
+    <div class="items-image" v-for= "store in store" :key= "store"> 
+      <img v-bind:src="image">
   
 
     </div>
@@ -27,15 +27,37 @@ export default {
          price: 3 ,
          image:  require("./assets/toast.jpg"),
       },{
+        item: "cheese", 
+        price: 5,
+        image: require("./assets/cheese.jpg")
 
-      }
-  
+      }, 
+      {
+        item: "ice-cream",
+        price: 6, 
+        image: require("./assets/ice-cream.jpg")
+      },{
+        item: "bagguete.jpg", 
+        price: 10, 
+        image: require("./assets/bagguete.jpg")
+
+      }, {
+        item: "milk", 
+        price: 5, 
+        image: require("./assets/milk.jpg")
+      }, {
+        item: "yogurt", 
+        price: 20, 
+        image: require("./assets/strawberry-yogurt.jpg")
+      },
+ 
 
 
       ]
     }
   }
 }
+
 
 /*import AppVue from "../../my-project/src/App.vue";
 
