@@ -4,15 +4,19 @@
     <div id = "top=bar">
         <h1 class="name"> Rafi's Grocery Store</h1>
     </div>
+    <div class="whole-container" v-for="product in store" :key="product">
 
-    <div class="items-image" v-for= "store in store" :key= "store"> 
-      <img v-bind:src="image">
+    <div class="items-image"> 
+      <h2>{{product.item}}</h2>
+  <img class="actual-image" :src="image">
+  
   
 
     </div>
-    <div class="items">{{item}}</div>
+    <div class="items"></div>
 
     </div>
+  </div>
 
 </body>
  
@@ -25,7 +29,7 @@ export default {
       store: [{
          item: "toast",
          price: 3 ,
-         image:  require("./assets/toast.jpg"),
+         image:  require("./assets/"),
       },{
         item: "cheese", 
         price: 5,
@@ -37,7 +41,7 @@ export default {
         price: 6, 
         image: require("./assets/ice-cream.jpg")
       },{
-        item: "bagguete.jpg", 
+        item: "bagguete", 
         price: 10, 
         image: require("./assets/bagguete.jpg")
 
@@ -94,6 +98,19 @@ body {
   border-radius: 1rem;
   border: solid .2rem #BD8775;
  
+}
+
+.item {
+  display: inline ;
+
+}
+.items-image{
+  display: inline;
+  color: white;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+
 }
 
 </style>
