@@ -29,7 +29,7 @@ export default {
       store: [{
          item: "toast",
          price: 3 ,
-         image:  require("./assets/"),
+         image:  require("./assets/toast.jpg"),
       },{
         item: "cheese", 
         price: 5,
