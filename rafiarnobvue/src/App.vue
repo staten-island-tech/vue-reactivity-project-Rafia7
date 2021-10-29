@@ -8,7 +8,12 @@
 
     <div class="items-image"> 
       <h2>{{product.item}}</h2>
-  <img class="actual-image" :src="image">
+  <img class="actual-image" :src="product.image">
+  <div class="price">
+   <p class="price-sub"> Price: ${{product.price}}</p> 
+
+
+    </div>
   
   
 
@@ -27,30 +32,30 @@ export default {
   data(){
     return{
       store: [{
-         item: "toast",
+         item: "Toast",
          price: 3 ,
          image:  require("./assets/toast.jpg"),
       },{
-        item: "cheese", 
+        item: "Cheese", 
         price: 5,
         image: require("./assets/cheese.jpg")
 
       }, 
       {
-        item: "ice-cream",
+        item: "Ice-cream",
         price: 6, 
         image: require("./assets/ice-cream.jpg")
       },{
-        item: "bagguete", 
+        item: "Bagguete", 
         price: 10, 
         image: require("./assets/bagguete.jpg")
 
       }, {
-        item: "milk", 
+        item: "Milk", 
         price: 5, 
         image: require("./assets/milk.jpg")
       }, {
-        item: "yogurt", 
+        item: "Yogurt", 
         price: 20, 
         image: require("./assets/strawberry-yogurt.jpg")
       },
@@ -107,10 +112,20 @@ body {
 .items-image{
   display: inline;
   color: white;
-  background-color: white;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 900;
+  text-align: center;
+
 
 }
+.actual-image{
+  width: 20rem;
+  border: solid .2rem #BD8775;
+  border-radius: 2rem;
+}
 
+.whole-container {
+  display: flex;
+  align-items: center;
+}
 </style>
