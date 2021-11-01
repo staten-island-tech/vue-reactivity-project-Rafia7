@@ -7,10 +7,14 @@
     <div class="whole-container" v-for="product in store" :key="product">
 
     <div class="items-image"> 
-      <h2>{{product.item}}</h2>
+      <h2 class="product-name">{{product.item}}</h2>
   <img class="actual-image" :src="product.image">
   <div class="price">
    <p class="price-sub"> Price: ${{product.price}}</p> 
+   <p class="buy" >
+    Buy 
+
+   </p>
 
 
     </div>
@@ -68,6 +72,9 @@ export default {
 }
 
 
+
+
+
 /*import AppVue from "../../my-project/src/App.vue";
 
 const app = new AppVue({
@@ -94,7 +101,7 @@ body {
   font-weight: 500;
 }
 .name {
-  background-color:#96C6ED;
+  background-color: blanchedalmond;
   opacity: 1;
   color: black;
   font-family: 'Courier New', Courier, monospace;
@@ -102,6 +109,8 @@ body {
   font-size: 2.5rem;
   border-radius: 1rem;
   border: solid .2rem #BD8775;
+  padding-left: 1rem;
+  padding-right: 1rem ;
  
 }
 
@@ -128,4 +137,28 @@ body {
   display: flex;
   align-items: center;
 }
+.buy{
+  border-radius: 2rem ;
+  border: solid .2rem black ;
+  color: #BD8775;
+  font-size: 2rem;
+  background-color: white;
+  opacity: .7;
+}
+
+.buy:hover{
+  transform: scale(1.2);
+  transition: all .7s;
+}
+
+.product-name{
+  font: 900;
+  font-size: 2.5rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+.price-sub{
+  color: yellow;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  }
 </style>
