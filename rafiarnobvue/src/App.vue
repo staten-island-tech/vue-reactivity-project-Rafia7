@@ -4,6 +4,9 @@
     <div id = "top=bar">
         <h1 class="name"> Rafi's Grocery Store</h1>
     </div>
+    <div class="total-amount" v-for="total in totals" :key="total" >
+     $ {{total.total}}
+       </div>
     <div class="whole-container" v-for="product in store" :key="product">
 
     <div class="items-image"> 
@@ -11,10 +14,10 @@
   <img class="actual-image" :src="product.image">
   <div class="price">
    <p class="price-sub"> Price: ${{product.price}}</p> 
-   <p class="buy" >
+   <button class="buy"  v-on:click ="addToTotal">
     Buy 
 
-   </p>
+   </button>
 
 
     </div>
@@ -22,7 +25,6 @@
   
 
     </div>
-    <div class="items"></div>
 
     </div>
   </div>
@@ -63,10 +65,17 @@ export default {
         price: 20, 
         image: require("./assets/strawberry-yogurt.jpg")
       },
- 
+      ], 
 
-
-      ]
+      totals: [{
+        total: 0,
+      }],
+      methods:[{
+        addToTotal: function (){
+          this.totals += 1
+        }
+      }]
+     
     }
   }
 }
@@ -149,6 +158,7 @@ body {
 .buy:hover{
   transform: scale(1.2);
   transition: all .7s;
+  cursor: pointer;
 }
 
 .product-name{
@@ -160,5 +170,14 @@ body {
   color: yellow;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.5rem;
+  }
+
+  .total-amount{
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
   }
 </style>
