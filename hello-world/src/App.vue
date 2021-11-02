@@ -17,7 +17,7 @@
  
 </template>
 <script>
-/*export default {
+export default {
   el:"App", 
   data(){
     return{
@@ -26,7 +26,23 @@
          price: 3 ,
          image:  require("./assets/toast.jpg"),
       },{
+        item: "milk",
+        price: 4,
+        image: require("./assets/milk.jpg"),
 
+      },{
+        item: "yogurt",
+        price: 6,
+        image: require("./assets/yogurt.jpg")
+
+      },{
+        item: "ice-cream",
+        price: 10, 
+        image: require("./assets/ice-cream.jpg")
+      },{
+        item: "cheese",
+        price: 20, 
+        image: require ("./assets/cheese.jpg")
       }
   
 
@@ -34,9 +50,9 @@
       ]
     }
   }
-}*/
+}
 
-import AppVue from "../../my-project/src/App.vue";
+/*import AppVue from "../../my-project/src/App.vue";
 
 const app = new AppVue({
   el: "app",
@@ -44,7 +60,7 @@ const app = new AppVue({
     item: "toast",
 
   }
-})
+})*/
 
 </script>
 
