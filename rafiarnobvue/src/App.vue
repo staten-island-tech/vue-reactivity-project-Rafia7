@@ -14,7 +14,7 @@
   <img class="actual-image" :src="product.image">
   <div class="price">
    <p class="price-sub"> Price: ${{product.price}}</p> 
-   <button class="buy"  v-on:click ="addToTotal">
+   <button class="buy"  v-on:click ="newTotal">
     Buy 
 
    </button>
@@ -25,6 +25,7 @@
   
 
     </div>
+
 
     </div>
   </div>
@@ -66,33 +67,21 @@ export default {
         image: require("./assets/strawberry-yogurt.jpg")
       },
       ], 
-
       totals: [{
         total: 0,
-      }],
-      methods:[{
-        addToTotal: function (){
-          this.totals += 1
-        }
+
       }]
-     
+
     }
   }
-}
-
-
-
-
-
-/*import AppVue from "../../my-project/src/App.vue";
-
-const app = new AppVue({
-  el: "app",
-  data: {
-    item: "toast",
-
-  }
-})*/
+  };
+  /* methods: [{
+    newTotal() {
+      this.total += this.price
+    }
+  }]*/
+  
+      
 
 </script>
 
