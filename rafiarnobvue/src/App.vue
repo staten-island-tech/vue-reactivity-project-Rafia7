@@ -4,8 +4,11 @@
     <div id = "top=bar">
         <h1 class="name"> Rafi's Grocery Store</h1>
     </div>
-    <div class="total-amount" v-for="total in totals" :key="total" >
-     $ {{total.total}}
+    <div class="total-amount" >
+    Total: ${{total}}
+       </div>
+    <div class="total-amount" >
+     cart: {{cart}} items
        </div>
     <div class="whole-container" v-for="product in store" :key="product">
 
@@ -14,10 +17,14 @@
   <img class="actual-image" :src="product.image">
   <div class="price">
    <p class="price-sub"> Price: ${{product.price}}</p> 
-   <button class="buy"  v-on:click ="newTotal">
+   <p class="buy"  @click ="newTotal()">
     Buy 
 
-   </button>
+   </p>
+   <p class="cart"  @click ="cartValue()">
+    Add to Cart
+
+   </p>
 
 
     </div>
@@ -40,48 +47,61 @@ export default {
     return{
       store: [{
          item: "Toast",
-         price: 3 ,
+         price:5 ,
          image:  require("./assets/toast.jpg"),
+        
       },{
         item: "Cheese", 
-        price: 5,
+        price:5,
         image: require("./assets/cheese.jpg")
 
       }, 
       {
         item: "Ice-cream",
-        price: 6, 
+        price:5, 
         image: require("./assets/ice-cream.jpg")
       },{
         item: "Bagguete", 
-        price: 10, 
+        price:5, 
         image: require("./assets/bagguete.jpg")
 
       }, {
         item: "Milk", 
-        price: 5, 
+        price:5, 
         image: require("./assets/milk.jpg")
       }, {
         item: "Yogurt", 
-        price: 20, 
+        price:5, 
         image: require("./assets/strawberry-yogurt.jpg")
-      },
-      ], 
-      totals: [{
-        total: 0,
-
-      }]
-
-    }
-  }
-  };
-  /* methods: [{
-    newTotal() {
-      this.total += this.price
-    }
-  }]*/
-  
+      },{
+      }
       
+
+      ],
+    
+
+       
+        total:0,
+        cart: 0
+        
+        
+       
+
+    }
+  }, 
+   methods: {
+     cartValue(){
+       this.cart += 1
+    
+
+     },
+   
+    newTotal(){
+      this.total += 5
+    }
+     
+  }}
+
 
 </script>
 
@@ -149,6 +169,20 @@ body {
   transition: all .7s;
   cursor: pointer;
 }
+.cart{
+    border-radius: 1rem ;
+  border: solid .2rem white ;
+  color: #BD8775;
+  font-size: 1rem;
+  background-color: black;
+  opacity: .7;
+}
+.cart:hover{
+   transform: scale(1.2);
+  transition: all .7s;
+  cursor: pointer;
+
+}
 
 .product-name{
   font: 900;
@@ -169,4 +203,5 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
   }
+
 </style>
